@@ -1,0 +1,149 @@
+* {
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #092635;
+}
+
+.card {
+  position: relative;
+  width: 90%;
+  max-width: 470px;
+  min-width: 320px;
+  background-image: linear-gradient(
+    135deg,
+    rgba(0, 254, 186, 0.1),
+    rgba(91, 84, 138, 1)
+  );
+  color: #fff;
+  margin: 100px auto 0;
+  border-radius: 50px;
+  padding: 40px 35px;
+  text-align: center;
+  box-shadow: 0 0 15px #000;
+}
+
+.search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #092635;
+  border-radius: 30px;
+}
+
+.search input {
+  width: 80%;
+  border: 0;
+  outline: 0;
+  color: #fff;
+  padding: 10px 25px;
+  height: 50px;
+  margin-right: 16px;
+  font-size: 18px;
+  background: transparent;
+  transition: all 0.5s ease;
+}
+.search input:hover {
+  scale: 0.95;
+}
+
+.search button {
+  border: 0;
+  outline: 0;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  padding: 5px 0 2px 0;
+  transition: all 0.5s ease;
+  background: transparent;
+  font-size: 18px;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.search button:hover {
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+.search button:active {
+  font-size: 1em;
+  line-height: 1em;
+}
+
+.weather-icon {
+  /* width: 170px; */
+  font-size: 170px;
+  margin-top: 30px;
+}
+.weather h1 {
+  font-size: 80px;
+  font-weight: 500;
+}
+.weather h2 {
+  font-size: 45px;
+  font-weight: 400;
+  margin-top: -10px;
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-top: 50px;
+}
+.col {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.humidity,
+.wind {
+  font-size: 28px;
+  margin-top: -6px;
+}
+
+.weather {
+  /* display: none; */
+  transition: all 0.5s ease;
+  color: #092635;
+}
+
+.error {
+  display: none;
+  text-align: left;
+  margin-left: 10px;
+  font-size: 14px;
+  margin-top: 10px;
+  color: rgba(224, 59, 59, 0.8);
+}
+
+@media only screen and (max-width: 450px) {
+  .details {
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+
+.col i {
+  font-size: 50px;
+  margin-right: 10px;
+}
+
+.status {
+  display: block;
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.mist-svg {
+  text-align: center;
+  display: none;
+}

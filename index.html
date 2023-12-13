@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- box-icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!--  -->
+  </head>
+  <body>
+    <div class="card">
+      <div class="search">
+        <input type="text" placeholder="search by city" spellcheck="false" />
+        <button>
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+
+      <div class="error">
+        <p>Invalid city name</p>
+      </div>
+
+      <div class="weather">
+        <!--  -->
+        <div class="weather-icon">
+          <i>
+            <svg
+              class="mist-svg"
+              xmlns="http://www.w3.org/2000/svg"
+              width="150"
+              height="150"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M4 19q-.425 0-.712-.288T3 18q0-.425.288-.712T4 17h10q.425 0 .713.288T15 18q0 .425-.288.713T14 19zm14 0q-.425 0-.712-.288T17 18q0-.425.288-.712T18 17h2q.425 0 .713.288T21 18q0 .425-.288.713T20 19zM4 15q-.425 0-.712-.288T3 14q0-.425.288-.712T4 13h2q.425 0 .713.288T7 14q0 .425-.288.713T6 15zm6 0q-.425 0-.712-.288T9 14q0-.425.288-.712T10 13h10q.425 0 .713.288T21 14q0 .425-.288.713T20 15zm-6-4q-.425 0-.712-.288T3 10q0-.425.288-.712T4 9h11q.425 0 .713.288T16 10q0 .425-.288.713T15 11zm15 0q-.425 0-.712-.288T18 10q0-.425.288-.712T19 9h1q.425 0 .713.288T21 10q0 .425-.288.713T20 11zM4 7q-.425 0-.712-.288T3 6q0-.425.288-.712T4 5h5q.425 0 .713.288T10 6q0 .425-.288.713T9 7zm9 0q-.425 0-.712-.288T12 6q0-.425.288-.712T13 5h7q.425 0 .713.288T21 6q0 .425-.288.713T20 7z"
+              />
+            </svg>
+          </i>
+          <span class="status"></span>
+        </div>
+        <!--  -->
+
+        <h1 class="temp">22°C</h1>
+        <h2 class="city">Kathmandu</h2>
+        <div class="details">
+          <div class="col">
+            <i class="bx bx-droplet"></i>
+            <!--  -->
+            <div>
+              <p class="humidity">50%</p>
+              <p>Humidity</p>
+            </div>
+          </div>
+          <div class="col">
+            <!--  -->
+            <i class="bx bx-wind"></i>
+
+            <!--  -->
+            <div>
+              <p class="wind">3 km/hr</p>
+              <p>Wind speed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
