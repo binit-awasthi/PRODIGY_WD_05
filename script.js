@@ -1,7 +1,6 @@
 const apiKey = "36a865807ad36fb51825604075ac2490";
 
-const apiUrl =
-  "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric";
 
 const searchBox = document.querySelector(".search input");
 const searchBtn = document.querySelector(".search button");
@@ -15,8 +14,18 @@ searchBox.addEventListener("keydown", function (event) {
   }
 });
 
-async function checkWeather(city) {
-  const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+async function checkWeather(arg1, arg2) {
+  let apiUrlLocation;
+
+  if (typeof arg2 === "undefined") {
+    // City name provided
+    apiUrlLocation = `${apiUrl}&q=${arg1}&appid=${apiKey}`;
+  } else {
+    // Latitude and Longitude provided
+    apiUrlLocation = `${apiUrl}&lat=${arg1}&lon=${arg2}&appid=${apiKey}`;
+  }
+
+  const response = await fetch(apiUrlLocation);
 
   if (response.status == 404) {
     document.querySelector(".error").style.display = "block";
@@ -53,4 +62,30 @@ async function checkWeather(city) {
 
 searchBtn.addEventListener("click", () => {
   checkWeather(searchBox.value);
+});
+
+const locationBtn = document.querySelector(".location");
+
+let failed;
+
+async function gotLocation(position) {
+  console.log(position);
+  lat = position.coords.latitude;
+  long = position.coords.longitude;
+  failed = false;
+}
+
+function failedToGet() {
+  failed = true;
+  console.log("failed to access the current location.");
+}
+
+navigator.geolocation.getCurrentPosition(gotLocation, failedToGet);
+locationBtn.addEventListener("click", async () => {
+  if (!failed) {
+    checkWeather(lat, long);
+    console.log("current location accessed");
+  } else {
+    alert("Location access blocked by user");
+  }
 });
